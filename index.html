@@ -641,7 +641,8 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div id="myPlot" style="width:100%; max-width:98vw"></div>
+                <!-- <div id="myPlot" style="width:100%; max-width:98vw"></div> -->
+                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
             </div>
 
         </div>
@@ -800,7 +801,8 @@
                             </ul>
                             <div class="mt--30">
                                 <h6 class="w-600">Address</h6>
-                                <p class="description">Knowledge Corridor, Raisan Village, PDPU Rd,<br> Gandhinagar, Gujarat 382007</p>
+                                <p class="description">Knowledge Corridor, Raisan Village, PDPU Rd,<br> Gandhinagar,
+                                    Gujarat 382007</p>
                             </div>
                         </div>
                     </div>
@@ -836,22 +838,31 @@
 
     <!-- JS
         ============================================ -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- graph js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script>
-        const xArray = ["Italy", "France", "Spain", "USA", "Argentina"];
-        const yArray = [55, 49, 44, 24, 15];
+        const xValues = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022];
+        const yValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
 
-        const data = [{
-            x: xArray,
-            y: yArray,
-            type: "bar",
-            orientation: "v",
-            marker: { color: "rgba(0,0,255,0.6)" }
-        }];
-
-        const layout = { title: "Our Progress" };
-
-        Plotly.newPlot("myPlot", data, layout);
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor: "rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    yAxes: [{ ticks: { min: 40, max: 180 } }],
+                }
+            }
+        });
     </script>
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr.min.js"></script>
