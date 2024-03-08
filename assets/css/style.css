@@ -120,7 +120,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400&amp;display=swap");
 :root {
   --color-primary: #2f57ef;
+  /* --color-primary: #004ac1; */
   --color-secondary: #b966e7;
+  /* --color-secondary: #e571ff; */
   --color-coral: #E9967A;
   --color-violet: #800080;
   --color-pink: #DB7093;
@@ -8163,6 +8165,18 @@ textarea:-ms-input-placeholder {
 -------------------------------*/
 .theme-gradient {
   background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.001);
+}
+.theme-gradient-adhoc {
+  /* background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); */
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(95,125,141,1) 35%, rgba(0,212,255,1) 100%); */
+  /* background: linear-gradient(90deg, #e571ff 0%, #00d4ff 100%); */
+  /* background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
+  /* background: linear-gradient(to right, #319cca, #93d0bc); */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-background-clip: text;
@@ -25255,6 +25269,9 @@ blockquote.has-text-align-right cite,
 .rbt-banner-5 .inner .list-icon li .icon {
   background-color: var(--color-blackest) !important;
 }
+/* .rbt-banner-6 .inner .header-caption span span{
+  background-color: #1923357b;
+} */
 .rbt-banner-5 .inner .header-caption span {
   color: var(--color-white);
   font-size: 85px;
